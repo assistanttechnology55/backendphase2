@@ -13,6 +13,9 @@ app = FastAPI(
     version=settings.VERSION,
     description="Todo Application API"
 )
+ @app.get("/health")
+     2 def health_check():
+     3     return {"status": "healthy"}
 
 # Add CORS middleware
 app.add_middleware(
